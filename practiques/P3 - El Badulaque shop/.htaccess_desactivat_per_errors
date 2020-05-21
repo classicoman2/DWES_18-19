@@ -1,0 +1,31 @@
+# Activar RewriteEngine
+RewriteEngine on
+
+# 404, mostrar missatge personalitzat
+# ErrorDocument 404 "<H1>Aquesta URL no pertany a la web de la llibreria Son Ferrer</H1>"
+
+# 404, mostrar vista personalitzada
+ErrorDocument 404 /biblio_mvc/view/404.php
+
+##############################################
+# Reescribir la URL solicitada por el usuario
+##############################################
+
+# http://biblio_mvc.localhost.com/pag/addpag
+RewriteRule ^llibre/(\w+)/?$ index.php?controller=llibres&action=mostra&id=$1
+
+# http://biblio_mvc.localhost.com/pag/updatepag/id/19
+RewriteRule ^pag/(\w+)/id/([0-9]+)?$ index.php?pag=$1&id=$2
+
+# Per a que no se pugui accedir a cap altre fitxer que no sigui index.php
+# Options All -Indexes
+
+# Notes
+#######
+
+# El domini ha d'apuntar directament a la carpeta on es troba index.php,
+# o bé he d'indicar la subcarpeta en la rescritura de rutes
+
+# No importa reiniciar apache2 despres de modificar .htaccess
+
+

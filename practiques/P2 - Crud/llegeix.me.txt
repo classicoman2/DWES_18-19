@@ -1,0 +1,7 @@
+# Toni Amengual
+# Març 2018
+
+
+# La llibreria per a colorejar el llistat s'ha obtingut de Bootstrap, en concret:
+# 
+# https://www.w3schools.com/bootstrap/bootstrap_tables.asp
